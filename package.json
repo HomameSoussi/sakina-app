@@ -1,0 +1,150 @@
+{
+  "name": "sakina-monorepo",
+  "version": "1.0.0",
+  "description": "Sakina - Islamic-inspired anxiety relief app monorepo",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "pnpm@8.15.1",
+  "scripts": {
+    "dev": "concurrently \"pnpm dev:web\" \"pnpm dev:mobile\"",
+    "dev:web": "pnpm --filter web dev",
+    "dev:mobile": "pnpm --filter mobile start",
+    "dev:packages": "pnpm --filter \"./packages/*\" dev",
+    
+    "build": "pnpm build:packages && pnpm build:web && pnpm build:mobile",
+    "build:packages": "pnpm --filter \"./packages/*\" build",
+    "build:web": "pnpm --filter web build",
+    "build:mobile": "pnpm --filter mobile build",
+    
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:packages": "jest --selectProjects packages",
+    "test:mobile": "jest --selectProjects mobile",
+    "test:web": "jest --selectProjects web",
+    "test:ci": "jest --ci --coverage --watchAll=false",
+    
+    "lint": "pnpm lint:packages && pnpm lint:mobile && pnpm lint:web",
+    "lint:packages": "pnpm --filter \"./packages/*\" lint",
+    "lint:mobile": "pnpm --filter mobile lint",
+    "lint:web": "pnpm --filter web lint",
+    "lint:fix": "pnpm lint:packages --fix && pnpm lint:mobile --fix && pnpm lint:web --fix",
+    
+    "type-check": "pnpm type-check:packages && pnpm type-check:mobile && pnpm type-check:web",
+    "type-check:packages": "pnpm --filter \"./packages/*\" type-check",
+    "type-check:mobile": "pnpm --filter mobile type-check",
+    "type-check:web": "pnpm --filter web type-check",
+    
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,yml,yaml}\"",
+    
+    "clean": "pnpm clean:packages && pnpm clean:mobile && pnpm clean:web && rimraf node_modules",
+    "clean:packages": "pnpm --filter \"./packages/*\" clean",
+    "clean:mobile": "pnpm --filter mobile clean",
+    "clean:web": "pnpm --filter web clean",
+    
+    "docker:dev": "docker-compose up app",
+    "docker:prod": "docker-compose --profile production up nginx",
+    "docker:test": "docker-compose --profile test up test",
+    "docker:build": "docker build -t sakina-app .",
+    "docker:clean": "docker-compose down -v && docker system prune -f",
+    
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:reset": "supabase db reset",
+    "supabase:migrate": "supabase db push",
+    "supabase:seed": "supabase db seed",
+    "supabase:types": "supabase gen types typescript --local > packages/types/src/supabase.ts",
+    
+    "mobile:ios": "pnpm --filter mobile ios",
+    "mobile:android": "pnpm --filter mobile android",
+    "mobile:build:ios": "pnpm --filter mobile build:ios",
+    "mobile:build:android": "pnpm --filter mobile build:android",
+    "mobile:submit:ios": "pnpm --filter mobile submit:ios",
+    "mobile:submit:android": "pnpm --filter mobile submit:android",
+    
+    "web:preview": "pnpm --filter web preview",
+    "web:deploy": "pnpm build:web && vercel --prod",
+    
+    "audit": "pnpm audit --audit-level moderate",
+    "audit:fix": "pnpm audit --fix",
+    
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "pre-push": "pnpm test:ci && pnpm type-check",
+    
+    "release": "changeset publish",
+    "version": "changeset version",
+    
+    "postinstall": "pnpm build:packages && pnpm --filter mobile expo install"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/react-native": "^12.4.2",
+    "@types/jest": "^29.5.8",
+    "@types/node": "^20.11.5",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-native": "^4.1.0",
+    "husky": "^8.0.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-expo": "^50.0.1",
+    "jest-extended": "^4.0.2",
+    "jest-watch-typeahead": "^2.2.2",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "pnpm test:ci && pnpm type-check"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/sakina-app.git"
+  },
+  "keywords": [
+    "anxiety",
+    "mental-health",
+    "islamic",
+    "cbt",
+    "meditation",
+    "react-native",
+    "nextjs",
+    "supabase",
+    "monorepo"
+  ],
+  "author": "Sakina Team",
+  "license": "MIT"
+}

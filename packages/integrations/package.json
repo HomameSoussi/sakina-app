@@ -1,0 +1,39 @@
+{
+  "name": "@sakina/integrations",
+  "version": "1.0.0",
+  "description": "External API integrations for Sakina app",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "stripe": "^14.15.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "typescript": "^5.3.3"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    },
+    "./aladhan": {
+      "import": "./src/aladhan.ts",
+      "types": "./src/aladhan.ts"
+    },
+    "./quran": {
+      "import": "./src/quran.ts",
+      "types": "./src/quran.ts"
+    },
+    "./stripe": {
+      "import": "./src/stripe.ts",
+      "types": "./src/stripe.ts"
+    }
+  }
+}

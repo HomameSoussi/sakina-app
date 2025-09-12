@@ -1,0 +1,32 @@
+{
+  "name": "@sakina/ui",
+  "version": "1.0.0",
+  "description": "Shared UI components for Sakina app",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint src --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-native": "^0.73.0",
+    "react-native-web": "^0.19.0",
+    "@tamagui/core": "^1.91.2",
+    "@tamagui/config": "^1.91.2",
+    "@tamagui/animations-react-native": "^1.91.2",
+    "lucide-react-native": "^0.309.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-native": "^0.73.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-native": "^0.73.0"
+  }
+}
