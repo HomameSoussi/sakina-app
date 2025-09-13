@@ -80,7 +80,7 @@
     "release": "changeset publish",
     "version": "changeset version",
     
-    "postinstall": "pnpm build:packages && pnpm --filter mobile expo install"
+    "postinstall": "echo 'Skipping postinstall for web deployment'"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
