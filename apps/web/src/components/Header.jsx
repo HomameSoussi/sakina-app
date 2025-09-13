@@ -4,18 +4,23 @@ import { Menu, X, Moon, Sun, Heart } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { useLanguage } from '../contexts/LanguageContext'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const location = useLocation()
+  const { t, isRTL } = useLanguage()
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Features', href: '/features' },
-    { name: 'Science & Faith', href: '/science-faith' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Crisis Help', href: '/crisis', urgent: true },
+    { name: t('home'), href: '/' },
+    { name: t('features'), href: '/features' },
+    { name: t('scienceFaith'), href: '/science-faith' },
+    { name: t('prayerTimes'), href: '/prayer-times' },
+    { name: 'Tools', href: '/tools', highlight: true },
+    { name: t('pricing'), href: '/pricing' },
+    { name: t('crisisHelp'), href: '/crisis', urgent: true },
   ]
 
   const isActive = (href) => location.pathname === href
@@ -38,26 +43,32 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className={`hidden md:flex items-center ${isRTL ? 'space-x-reverse space-x-8' : 'space-x-8'}`}>
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-colors hover:text-primary relative ${
                   isActive(item.href)
                     ? 'text-primary'
                     : item.urgent
                     ? 'text-destructive hover:text-destructive/80'
+                    : item.highlight
+                    ? 'text-primary bg-primary/10 px-3 py-1 rounded-full'
                     : 'text-muted-foreground'
                 }`}
               >
                 {item.name}
+                {item.highlight && (
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                )}
               </Link>
             ))}
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className={`hidden md:flex items-center ${isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
+            <LanguageSwitcher variant="compact" />
             <Button
               variant="ghost"
               size="icon"
@@ -69,7 +80,7 @@ const Header = () => {
             </Button>
             <Button asChild>
               <a href="#download" className="bg-primary hover:bg-primary/90">
-                Download App
+                {t('downloadApp')}
               </a>
             </Button>
           </div>
@@ -90,18 +101,27 @@ const Header = () => {
                       key={item.name}
                       to={item.href}
                       onClick={() => setIsOpen(false)}
-                      className={`text-lg font-medium transition-colors hover:text-primary ${
+                      className={`text-lg font-medium transition-colors hover:text-primary relative ${
                         isActive(item.href)
                           ? 'text-primary'
                           : item.urgent
                           ? 'text-destructive hover:text-destructive/80'
+                          : item.highlight
+                          ? 'text-primary'
                           : 'text-muted-foreground'
                       }`}
                     >
                       {item.name}
+                      {item.highlight && (
+                        <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                      )}
                     </Link>
                   ))}
-                  <div className="pt-4 border-t">
+                  <div className="pt-4 border-t space-y-4">
+                    <div>
+                      <span className="text-sm font-medium mb-3 block">Language</span>
+                      <LanguageSwitcher />
+                    </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-medium">Theme</span>
                       <Button
@@ -116,7 +136,7 @@ const Header = () => {
                   </div>
                   <Button asChild className="mt-4">
                     <a href="#download" onClick={() => setIsOpen(false)}>
-                      Download App
+                      {t('downloadApp')}
                     </a>
                   </Button>
                 </div>

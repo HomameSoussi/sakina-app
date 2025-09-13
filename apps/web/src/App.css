@@ -1,3 +1,6 @@
+/* Arabic font imports - must be first */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -123,5 +126,115 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+
+/* Import RTL styles */
+@import './rtl.css';
+
+/* Additional Sakina-specific styles */
+.sakina-gradient {
+  background: linear-gradient(135deg, var(--sakina-primary), var(--sakina-secondary));
+}
+
+.sakina-text-gradient {
+  background: linear-gradient(135deg, var(--sakina-primary), var(--sakina-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.panic-button {
+  background: radial-gradient(circle, #DC2626, #B91C1C);
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+}
+
+.panic-button:hover {
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
+}
+
+.prayer-time-card {
+  border-left: 4px solid var(--sakina-prayer);
+}
+
+[dir="rtl"] .prayer-time-card {
+  border-left: none;
+  border-right: 4px solid var(--sakina-prayer);
+}
+
+/* Smooth transitions for language switching */
+* {
+  transition: margin 0.3s ease, padding 0.3s ease, text-align 0.3s ease;
+}
+
+/* Loading animations */
+@keyframes pulse-gentle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pulse-gentle {
+  animation: pulse-gentle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Breathing animation */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Islamic calligraphy styling */
+.islamic-text {
+  font-family: 'Amiri', 'Scheherazade New', serif;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary: oklch(0.5 0.2 195);
+    --secondary: oklch(0.2 0.1 230);
+  }
+}
+
+/* Focus styles for better accessibility */
+.focus-visible:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
   }
 }
