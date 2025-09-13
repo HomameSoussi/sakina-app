@@ -43,7 +43,7 @@ export const activateLocale = (locale: string) => {
 };
 
 // Initialize with detected locale
-const detectedLocale = detectLocale();
+const detectedLocale = detectLocale() || defaultLocale;
 activateLocale(detectedLocale);
 
 // Utility functions

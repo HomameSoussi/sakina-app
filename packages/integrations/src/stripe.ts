@@ -48,7 +48,7 @@ export class StripeService {
 
   constructor(secretKey: string) {
     this.stripe = new Stripe(secretKey, {
-      apiVersion: '2024-12-18.acacia',
+      apiVersion: '2024-06-20',
     });
   }
 
