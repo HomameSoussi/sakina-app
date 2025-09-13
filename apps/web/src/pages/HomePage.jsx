@@ -19,6 +19,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import InteractivePanicButton from '../components/InteractivePanicButton'
 
 const HomePage = () => {
   const [activeFeature, setActiveFeature] = useState(0)
@@ -139,29 +140,16 @@ const HomePage = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative flex justify-center"
             >
-              <div className="relative mx-auto w-80 h-96 bg-gradient-to-br from-primary to-secondary rounded-3xl p-1 shadow-2xl">
-                <div className="w-full h-full bg-background rounded-3xl p-6 flex flex-col items-center justify-center">
-                  <div className="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                    <Heart className="w-16 h-16 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">سَكِينَة</h3>
-                  <p className="text-muted-foreground text-center text-sm mb-6">
-                    Tap for instant calm
-                  </p>
-                  <div className="w-full space-y-3">
-                    <div className="h-2 bg-primary/20 rounded-full">
-                      <div className="h-2 bg-primary rounded-full w-3/4"></div>
-                    </div>
-                    <div className="h-2 bg-primary/20 rounded-full">
-                      <div className="h-2 bg-primary rounded-full w-1/2"></div>
-                    </div>
-                    <div className="h-2 bg-primary/20 rounded-full">
-                      <div className="h-2 bg-primary rounded-full w-5/6"></div>
-                    </div>
-                  </div>
-                </div>
+              <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl border">
+                <h3 className="text-2xl font-semibold mb-4 text-center text-teal-600">
+                  Try the Panic Relief Button
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-center mb-6 text-sm">
+                  Experience our guided 4-step panic relief process
+                </p>
+                <InteractivePanicButton />
               </div>
               {/* Floating elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
