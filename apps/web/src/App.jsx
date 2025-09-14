@@ -13,9 +13,9 @@ import HomePage from './pages/HomePage'
 import FeaturesPage from './pages/FeaturesPage'
 import ScienceFaithPage from './pages/ScienceFaithPage'
 import PricingPage from './pages/PricingPage'
-import CrisisPage from './pages/CrisisPage'
+import CrisisPageRegional from './pages/CrisisPageRegional'
 import PrayerTimesPage from './pages/PrayerTimesPage'
-import ToolsPage from './pages/ToolsPage'
+import ToolsPageUpdated from './pages/ToolsPageUpdated'
 import DonatePage from './pages/DonatePage'
 
 function App() {
@@ -31,9 +31,9 @@ function App() {
                 <Route path="/features" element={<FeaturesPage />} />
                 <Route path="/science-faith" element={<ScienceFaithPage />} />
                 <Route path="/pricing" element={<PricingPage />} />
-                <Route path="/crisis" element={<CrisisPage />} />
+                <Route path="/crisis" element={<CrisisPageRegional />} />
                 <Route path="/prayer-times" element={<PrayerTimesPage />} />
-                <Route path="/tools" element={<ToolsPage />} />
+                <Route path="/tools" element={<ToolsPageUpdated />} />
                 <Route path="/donate" element={<DonatePage />} />
               </Routes>
             </main>

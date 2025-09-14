@@ -198,6 +198,50 @@ const translations = {
     youAreNotAlone: 'لست وحدك',
     crisisDescription: 'إذا كنت تواجه أزمة صحة نفسية، فالمساعدة الفورية متاحة. هذه الموارد توفر الدعم المهني عندما تحتاجه أكثر.',
     
+    // Tools page
+    tools: 'الأدوات',
+    freeToolsTitle: 'أدوات العافية النفسية المجانية',
+    freeToolsDescription: 'جرب أدوات تخفيف القلق المبنية على الأدلة مجاناً. اختبر قوة سكينة قبل تحميل التطبيق الكامل.',
+    freeUsageToday: 'الاستخدام المجاني اليوم',
+    sessionsUsed: 'جلسة مستخدمة',
+    resetsDaily: 'يتجدد يومياً',
+    unlimitedWithPro: 'غير محدود مع الخطة الاحترافية',
+    breathingExercises: 'تمارين التنفس',
+    breathingExercisesDesc: 'تقنيات التنفس 4-7-8 والتنفس المربع',
+    moodCheckIn: 'فحص المزاج',
+    moodCheckInDesc: 'تتبع حالتك العاطفية',
+    cbtThoughtRecord: 'سجل الأفكار المعرفي السلوكي',
+    cbtThoughtRecordDesc: 'تحدي الأفكار السلبية',
+    guidedMeditations: 'التأملات الموجهة',
+    guidedMeditationsDesc: 'جلسات صوتية مهدئة',
+    immediateRelief: 'راحة فورية لنوبات الهلع',
+    readyForMore: 'مستعد للمزيد؟',
+    getUnlimitedAccess: 'احصل على وصول غير محدود لجميع الأدوات، وأوراق عمل العلاج المعرفي السلوكي المتقدمة، والتأملات الموجهة، والمحتوى الإسلامي، والمزيد مع سكينة الاحترافية.',
+    supportMission: 'تريد دعم مهمتنا؟',
+    makeADonation: 'تبرع',
+    
+    // Prayer Times
+    prayerTimesTitle: 'أوقات الصلاة',
+    todaysDate: 'تاريخ اليوم',
+    qiblaDirection: 'اتجاه القبلة',
+    nextPrayer: 'الصلاة القادمة',
+    fajr: 'الفجر',
+    dhuhr: 'الظهر',
+    asr: 'العصر',
+    maghrib: 'المغرب',
+    isha: 'العشاء',
+    
+    // Common
+    loading: 'جاري التحميل...',
+    tryAgain: 'حاول مرة أخرى',
+    learnMore: 'اعرف المزيد',
+    getStarted: 'ابدأ الآن',
+    
+    // Islamic greetings
+    assalamuAlaikum: 'السلام عليكم ورحمة الله وبركاته',
+    barakAllahuFeek: 'بارك الله فيك',
+    jazakAllahuKhairan: 'جزاك الله خيراً'
+    
     // Prayer Times
     prayerTimesTitle: 'أوقات الصلاة',
     todaysDate: 'تاريخ اليوم',
