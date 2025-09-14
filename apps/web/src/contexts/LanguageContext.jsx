@@ -240,7 +240,7 @@ const translations = {
     // Islamic greetings
     assalamuAlaikum: 'السلام عليكم ورحمة الله وبركاته',
     barakAllahuFeek: 'بارك الله فيك',
-    jazakAllahuKhairan: 'جزاك الله خيراً'
+    jazakAllahuKhairan: 'جزاك الله خيراً',
     
     // Prayer Times
     prayerTimesTitle: 'أوقات الصلاة',
