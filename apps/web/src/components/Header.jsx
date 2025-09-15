@@ -18,7 +18,7 @@ const Header = () => {
     { name: t('features'), href: '/features' },
     { name: t('scienceFaith'), href: '/science-faith' },
     { name: t('prayerTimes'), href: '/prayer-times' },
-    { name: 'Tools', href: '/tools', highlight: true },
+    { name: t('tools'), href: '/tools', highlight: true },
     { name: t('pricing'), href: '/pricing' },
     { name: t('crisisHelp'), href: '/crisis', urgent: true },
   ]

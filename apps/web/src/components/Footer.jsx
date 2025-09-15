@@ -138,43 +138,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Attribution */}
-        <div className="border-t py-4">
-          <div className="text-xs text-muted-foreground text-center">
-            <p className="mb-2">
-              Quranic content from{' '}
-              <a
-                href="https://quran.com"
-                className="underline hover:text-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Quran.com
-              </a>{' '}
-              and{' '}
-              <a
-                href="https://tanzil.net"
-                className="underline hover:text-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Tanzil.net
-              </a>{' '}
-              (CC BY 3.0)
-            </p>
-            <p>
-              Prayer times from{' '}
-              <a
-                href="https://aladhan.com"
-                className="underline hover:text-primary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Aladhan API
-              </a>
-            </p>
-          </div>
-        </div>
+
       </div>
     </footer>
   )

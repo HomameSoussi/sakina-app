@@ -40,6 +40,14 @@ const PrayerTimesPage = () => {
   }, [])
 
   const getCurrentLocation = () => {
+    // Start with default location (Riyadh, Saudi Arabia) for immediate display
+    const defaultLat = 24.7136
+    const defaultLng = 46.6753
+    setLocation({ latitude: defaultLat, longitude: defaultLng })
+    fetchPrayerTimes(defaultLat, defaultLng)
+    fetchQiblaDirection(defaultLat, defaultLng)
+
+    // Then try to get user's actual location
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -50,17 +58,10 @@ const PrayerTimesPage = () => {
         },
         (error) => {
           console.error('Error getting location:', error)
-          // Fallback to a default location (Mecca)
-          const defaultLat = 21.4225
-          const defaultLng = 39.8262
-          setLocation({ latitude: defaultLat, longitude: defaultLng })
-          fetchPrayerTimes(defaultLat, defaultLng)
-          fetchQiblaDirection(defaultLat, defaultLng)
-        }
+          // Keep using default location if geolocation fails
+        },
+        { timeout: 10000 } // 10 second timeout
       )
-    } else {
-      setError('Geolocation is not supported by this browser.')
-      setLoading(false)
     }
   }
 

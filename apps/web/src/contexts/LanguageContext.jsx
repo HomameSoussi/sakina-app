@@ -242,18 +242,6 @@ const translations = {
     barakAllahuFeek: 'بارك الله فيك',
     jazakAllahuKhairan: 'جزاك الله خيراً',
     
-    // Prayer Times
-    prayerTimesTitle: 'أوقات الصلاة',
-    todaysDate: 'تاريخ اليوم',
-    qiblaDirection: 'اتجاه القبلة',
-    nextPrayer: 'الصلاة التالية',
-    
-    // Common
-    loading: 'جاري التحميل...',
-    tryAgain: 'حاول مرة أخرى',
-    learnMore: 'اعرف المزيد',
-    getStarted: 'ابدأ',
-    
     // Freemium Features
     tryPanicButton: 'جرب زر تخفيف الهلع',
     experienceGuided: 'اختبر عملية تخفيف الهلع الموجهة من 4 خطوات',
