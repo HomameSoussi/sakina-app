@@ -20,42 +20,44 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import InteractivePanicButton from '../components/InteractivePanicButton'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const HomePage = () => {
+  const { t } = useLanguage()
   const [activeFeature, setActiveFeature] = useState(0)
 
   const features = [
     {
       icon: Heart,
-      title: 'Panic Relief Button',
-      description: 'One-tap access to guided panic relief with grounding, breathing, and dhikr exercises.',
+      title: t('panicRelief'),
+      description: t('panicReliefDesc'),
       color: 'text-red-500',
     },
     {
       icon: Brain,
-      title: 'CBT Tools',
-      description: 'Evidence-based cognitive behavioral therapy techniques for reframing anxious thoughts.',
+      title: t('cbtTools'),
+      description: t('cbtToolsDesc'),
       color: 'text-blue-500',
     },
     {
       icon: Moon,
-      title: 'Islamic Integration',
-      description: 'Optional Islamic content including dhikr, duas, and Quranic verses for spiritual comfort.',
+      title: t('islamicIntegration'),
+      description: t('islamicIntegrationDesc'),
       color: 'text-purple-500',
     },
     {
       icon: Shield,
-      title: 'Privacy First',
-      description: 'Your data stays private. Offline-first design with optional encrypted cloud sync.',
+      title: t('privacyFirst'),
+      description: t('privacyFirstDesc'),
       color: 'text-green-500',
     },
   ]
 
   const stats = [
-    { number: '10K+', label: 'Users Helped', icon: Users },
-    { number: '4.8★', label: 'App Rating', icon: Star },
-    { number: '15+', label: 'Languages', icon: Globe },
-    { number: '24/7', label: 'Crisis Support', icon: Shield },
+    { number: '10K+', label: t('usersHelped'), icon: Users },
+    { number: '4.8★', label: t('appRating'), icon: Star },
+    { number: '15+', label: t('languages'), icon: Globe },
+    { number: '24/7', label: t('crisisSupport'), icon: Shield },
   ]
 
   const testimonials = [
@@ -95,43 +97,42 @@ const HomePage = () => {
                 🌟 Now Available on iOS & Android
               </Badge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                Find Your{' '}
+                {t('heroTitle')}{' '}
                 <span className="text-primary">سَكِينَة</span>
                 <br />
                 <span className="text-muted-foreground text-3xl sm:text-4xl lg:text-5xl">
-                  Inner Peace
+                  {t('heroSubtitle')}
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
-                Panic first-aid and CBT tools with an Islamic lens. 
-                Inclusive, optional, and designed for everyone seeking calm and mental wellness.
+                {t('heroDescription')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button size="lg" className="text-lg px-8 py-6" asChild>
                   <a href="#download">
                     <Download className="mr-2 h-5 w-5" />
-                    Download Free
+                    {t('downloadFree')}
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
                   <Link to="/features">
                     <Play className="mr-2 h-5 w-5" />
-                    Watch Demo
+                    {t('watchDemo')}
                   </Link>
                 </Button>
               </div>
               <div className="mt-8 flex items-center justify-center lg:justify-start space-x-6 text-sm text-muted-foreground">
                 <div className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  Free to use
+                  {t('freeToUse')}
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  No ads
+                  {t('noAds')}
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  Privacy first
+                  {t('privacyFirst')}
                 </div>
               </div>
             </motion.div>
@@ -144,10 +145,10 @@ const HomePage = () => {
             >
               <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl border">
                 <h3 className="text-2xl font-semibold mb-4 text-center text-teal-600">
-                  Try the Panic Relief Button
+                  {t('tryPanicReliefButton')}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-center mb-6 text-sm">
-                  Experience our guided 4-step panic relief process
+                  {t('experienceGuidedProcess')}
                 </p>
                 <InteractivePanicButton />
               </div>
@@ -185,11 +186,10 @@ const HomePage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Everything You Need for Mental Wellness
+              {t('everythingYouNeed')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Sakina combines evidence-based mental health tools with optional Islamic practices 
-              to provide comprehensive support for anxiety and stress.
+              {t('sakinaCombines')}
             </p>
           </div>
 

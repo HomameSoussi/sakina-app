@@ -4,8 +4,10 @@ import { Heart, Pause, Play, RotateCcw, CheckCircle } from 'lucide-react'
 import { Button } from './ui/button'
 import { Card, CardContent } from './ui/card'
 import { Progress } from './ui/progress'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function InteractivePanicButton() {
+  const { t } = useLanguage()
   const [isActive, setIsActive] = useState(false)
   const [currentStep, setCurrentStep] = useState(0)
   const [breathingPhase, setBreathingPhase] = useState('inhale') // inhale, hold, exhale
@@ -129,13 +131,13 @@ export default function InteractivePanicButton() {
             />
             <div className="relative z-10 flex flex-col items-center">
               <Heart className="w-12 h-12 mb-2" />
-              <span>I Need Help</span>
-              <span className="text-sm font-normal">Tap for Relief</span>
+              <span>{t('iNeedHelp')}</span>
+              <span className="text-sm font-normal">{t('tapForRelief')}</span>
             </div>
           </Button>
         </motion.div>
         <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 max-w-xs mx-auto">
-          Feeling overwhelmed? This guided exercise will help you through a panic attack in 4 simple steps.
+          {t('feelingOverwhelmed')}
         </p>
       </div>
     )

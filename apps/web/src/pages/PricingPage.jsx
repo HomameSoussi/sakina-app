@@ -5,8 +5,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 import { Badge } from '../components/ui/badge'
 import { Switch } from '../components/ui/switch'
 import { useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function PricingPage() {
+  const { t } = useLanguage()
   const [isYearly, setIsYearly] = useState(false)
 
   const fadeInUp = {
@@ -17,8 +19,8 @@ export default function PricingPage() {
 
   const plans = [
     {
-      name: "Free",
-      description: "Essential panic relief and basic CBT tools",
+      name: t('free'),
+      description: t('essentialPanicRelief'),
       price: { monthly: 0, yearly: 0 },
       badge: null,
       features: [
@@ -37,14 +39,14 @@ export default function PricingPage() {
         "No advanced analytics",
         "Community support only"
       ],
-      cta: "Get Started Free",
+      cta: t('getStartedFree'),
       popular: false
     },
     {
-      name: "Pro",
-      description: "Complete mental wellness toolkit with premium features",
+      name: t('pro'),
+      description: t('completeMentalWellness'),
       price: { monthly: 9.99, yearly: 99.99 },
-      badge: "Most Popular",
+      badge: t('mostPopular'),
       features: [
         "Everything in Free, plus:",
         "Unlimited journal entries & mood tracking",
@@ -61,14 +63,14 @@ export default function PricingPage() {
         "Early access to new features"
       ],
       limitations: [],
-      cta: "Start Pro Trial",
+      cta: t('startProTrial'),
       popular: true
     },
     {
-      name: "Family",
-      description: "Pro features for up to 6 family members",
+      name: t('family'),
+      description: t('proFeaturesFamily'),
       price: { monthly: 19.99, yearly: 199.99 },
-      badge: "Best Value",
+      badge: t('bestValue'),
       features: [
         "Everything in Pro, plus:",
         "Up to 6 individual accounts",
@@ -84,7 +86,7 @@ export default function PricingPage() {
         "Educational resources for parents"
       ],
       limitations: [],
-      cta: "Start Family Plan",
+      cta: t('startFamilyPlan'),
       popular: false
     }
   ]
@@ -104,18 +106,16 @@ export default function PricingPage() {
               Simple • Transparent • No Hidden Fees
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              Choose Your Path to{' '}
-              <span className="text-teal-600">سَكِينَة</span>
+              {t('chooseYourPath')}
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
-              Start your mental wellness journey with our free plan, or unlock the full potential 
-              of Islamic-inspired anxiety relief with Pro features.
+              {t('startMentalWellness')}
             </p>
 
             {/* Billing Toggle */}
             <div className="flex items-center justify-center gap-4 mb-8">
               <span className={`text-sm ${!isYearly ? 'text-gray-900 dark:text-white font-semibold' : 'text-gray-500'}`}>
-                Monthly
+                {t('monthly')}
               </span>
               <Switch
                 checked={isYearly}
@@ -123,10 +123,10 @@ export default function PricingPage() {
                 className="data-[state=checked]:bg-teal-600"
               />
               <span className={`text-sm ${isYearly ? 'text-gray-900 dark:text-white font-semibold' : 'text-gray-500'}`}>
-                Yearly
+                {t('yearly')}
               </span>
               <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-                Save 17%
+                {t('save17')}
               </Badge>
             </div>
           </motion.div>

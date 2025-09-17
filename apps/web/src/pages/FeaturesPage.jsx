@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../contexts/LanguageContext'
 import { 
   Heart, 
   Brain, 
@@ -23,6 +24,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 
 const FeaturesPage = () => {
+  const { t } = useLanguage()
   const [activeDemo, setActiveDemo] = useState('panic')
   const [isPlaying, setIsPlaying] = useState(false)
 
@@ -30,15 +32,15 @@ const FeaturesPage = () => {
     {
       id: 'panic',
       icon: Heart,
-      title: 'Panic Relief Button',
-      subtitle: 'Instant access to calm',
-      description: 'One-tap access to a guided 4-step panic relief flow: grounding exercises, breathing techniques, optional dhikr, and emergency contacts.',
+      title: t('panicRelief'),
+      subtitle: t('instantAccessToCalm'),
+      description: t('panicReliefDesc'),
       benefits: [
-        'Works 100% offline once downloaded',
-        '5-4-3-2-1 grounding technique',
-        'Box breathing and 4-7-8 patterns',
-        'Optional Islamic dhikr integration',
-        'Emergency contact quick-dial'
+        t('worksOffline'),
+        t('groundingTechnique'),
+        t('breathingPatterns'),
+        t('islamicDhikrIntegration'),
+        t('emergencyContactQuickDial')
       ],
       color: 'text-red-500',
       bgColor: 'bg-red-50 dark:bg-red-950/20',
@@ -46,15 +48,15 @@ const FeaturesPage = () => {
     {
       id: 'cbt',
       icon: Brain,
-      title: 'CBT Tools',
-      subtitle: 'Reframe your thoughts',
-      description: 'Evidence-based cognitive behavioral therapy techniques to identify, challenge, and reframe anxious thoughts with optional Islamic perspectives.',
+      title: t('cbtTools'),
+      subtitle: t('reframeYourThoughts'),
+      description: t('cbtToolsDesc'),
       benefits: [
-        'Thought record worksheets',
-        'Cognitive distortion identification',
-        'Reframing exercises',
-        'Islamic wisdom integration',
-        'Progress tracking'
+        t('thoughtRecordWorksheets'),
+        t('cognitiveRestructuring'),
+        t('behavioralActivation'),
+        t('mindfulnessIntegration'),
+        t('islamicPerspectives')
       ],
       color: 'text-blue-500',
       bgColor: 'bg-blue-50 dark:bg-blue-950/20',
@@ -62,15 +64,15 @@ const FeaturesPage = () => {
     {
       id: 'library',
       icon: Headphones,
-      title: 'Calm Audio Library',
-      subtitle: 'Soothing sounds & recitations',
-      description: 'Curated collection of Quranic recitations, ruqyah, sleep stories, nature sounds, and guided meditations for relaxation.',
+      title: t('calmAudioLibrary'),
+      subtitle: t('soothingSoundsRecitations'),
+      description: t('curatedCollection'),
       benefits: [
-        'High-quality audio content',
-        'Offline download capability',
-        'Multiple reciters available',
-        'Sleep stories and nature sounds',
-        'Guided dhikr meditations'
+        t('highQualityAudio'),
+        t('offlineDownload'),
+        t('multipleReciters'),
+        t('sleepStoriesNature'),
+        t('guidedDhikrMeditations')
       ],
       color: 'text-purple-500',
       bgColor: 'bg-purple-50 dark:bg-purple-950/20',
@@ -78,15 +80,15 @@ const FeaturesPage = () => {
     {
       id: 'journal',
       icon: BookOpen,
-      title: 'Mood Journal',
-      subtitle: 'Track your wellness journey',
-      description: 'Daily mood check-ins with valence and arousal tracking, tags, voice-to-text notes, and insights to understand your patterns.',
+      title: t('moodJournal'),
+      subtitle: t('trackWellnessJourney'),
+      description: t('dailyMoodCheckins'),
       benefits: [
-        'Simple mood rating system',
-        'Customizable mood tags',
-        'Voice-to-text journaling',
-        'Weekly and monthly insights',
-        'Privacy-first data storage'
+        t('simpleMoodRating'),
+        t('customizableMoodTags'),
+        t('voiceToTextJournaling'),
+        t('weeklyMonthlyInsights'),
+        t('privacyFirstStorage')
       ],
       color: 'text-green-500',
       bgColor: 'bg-green-50 dark:bg-green-950/20',
@@ -153,7 +155,7 @@ const FeaturesPage = () => {
               🚀 Comprehensive Mental Wellness
             </Badge>
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-              Features That <span className="text-primary">Actually Help</span>
+              {t('featuresThatHelp')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Sakina combines evidence-based mental health tools with optional Islamic practices 
@@ -200,11 +202,11 @@ const FeaturesPage = () => {
 
                     <Button size="lg" className="mr-4">
                       <Download className="mr-2 h-5 w-5" />
-                      Try This Feature
+                      {t('tryThisFeature')}
                     </Button>
                     <Button variant="outline" size="lg">
                       <Play className="mr-2 h-5 w-5" />
-                      Watch Demo
+                      {t('watchDemo')}
                     </Button>
                   </div>
 
