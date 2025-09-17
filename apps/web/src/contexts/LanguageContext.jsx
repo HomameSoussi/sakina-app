@@ -328,8 +328,8 @@ const translations = {
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
-    // Get language from localStorage or default to 'en'
-    return localStorage.getItem('sakina-language') || 'en'
+    // Get language from localStorage or default to 'ar' (Arabic)
+    return localStorage.getItem('sakina-language') || 'ar'
   })
 
   const [direction, setDirection] = useState(() => {
