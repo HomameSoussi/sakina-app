@@ -5,6 +5,7 @@ import { Button } from './ui/button'
 import { Card, CardContent } from './ui/card'
 import { Progress } from './ui/progress'
 import { useLanguage } from '../contexts/LanguageContext'
+import { interpolateTranslation } from '../utils/translationHelper'
 
 export default function InteractivePanicButton() {
   const { t } = useLanguage()
@@ -17,39 +18,39 @@ export default function InteractivePanicButton() {
 
   const steps = [
     {
-      title: "Ground Yourself",
-      subtitle: "5-4-3-2-1 Technique",
-      instruction: "Name 5 things you can see around you",
+      title: t('groundYourself'),
+      subtitle: t('groundingTechnique'),
+      instruction: t('groundingInstruction'),
       duration: 30,
       type: "grounding"
     },
     {
-      title: "Breathe Deeply", 
-      subtitle: "4-7-8 Breathing",
-      instruction: "Follow the breathing pattern to calm your nervous system",
+      title: t('breatheDeep'), 
+      subtitle: t('breathingTechnique'),
+      instruction: t('breathingInstruction'),
       duration: 60,
       type: "breathing"
     },
     {
-      title: "Positive Affirmations",
-      subtitle: "Remind Yourself",
-      instruction: "This feeling will pass. You are safe. You are strong.",
+      title: t('positiveAffirmations'),
+      subtitle: t('remindYourself'),
+      instruction: t('affirmationInstruction'),
       duration: 30,
       type: "affirmation"
     },
     {
-      title: "Seek Support",
-      subtitle: "You're Not Alone",
-      instruction: "Consider reaching out to someone you trust",
+      title: t('seekSupport'),
+      subtitle: t('youreNotAlone'),
+      instruction: t('supportInstruction'),
       duration: 20,
       type: "support"
     }
   ]
 
   const breathingPattern = {
-    inhale: { count: 4, next: 'hold', instruction: 'Breathe in slowly' },
-    hold: { count: 7, next: 'exhale', instruction: 'Hold your breath' },
-    exhale: { count: 8, next: 'inhale', instruction: 'Breathe out slowly' }
+    inhale: { count: 4, next: 'hold', instruction: t('breatheInSlowly') },
+    hold: { count: 7, next: 'exhale', instruction: t('holdYourBreath') },
+    exhale: { count: 8, next: 'inhale', instruction: t('breatheOutSlowly') }
   }
 
   useEffect(() => {
@@ -154,10 +155,10 @@ export default function InteractivePanicButton() {
           <div className="mb-6">
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                Step {currentStep + 1} of {steps.length}
+                {interpolateTranslation(t('stepProgress'), { current: currentStep + 1, total: steps.length })}
               </span>
               <span className="text-sm text-gray-500">
-                {Math.round(progress)}% Complete
+                {Math.round(progress)}% {t('complete')}
               </span>
             </div>
             <Progress value={progress} className="h-2" />
@@ -203,7 +204,7 @@ export default function InteractivePanicButton() {
                     className="mb-4"
                   >
                     {isBreathing ? <Pause className="w-4 h-4 mr-2" /> : <Play className="w-4 h-4 mr-2" />}
-                    {isBreathing ? 'Pause' : 'Start'} Breathing
+                    {isBreathing ? t('pauseBreathing') : t('startBreathing')}
                   </Button>
                 </div>
               )}
@@ -212,13 +213,13 @@ export default function InteractivePanicButton() {
               {currentStep === 0 && (
                 <div className="mb-6">
                   <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 mb-4">
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Look around and identify:</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{t('lookAroundIdentify')}</p>
                     <ul className="text-left space-y-1 text-sm">
-                      <li>• 5 things you can <strong>see</strong></li>
-                      <li>• 4 things you can <strong>touch</strong></li>
-                      <li>• 3 things you can <strong>hear</strong></li>
-                      <li>• 2 things you can <strong>smell</strong></li>
-                      <li>• 1 thing you can <strong>taste</strong></li>
+                      <li>• {t('fiveThingsSee')}</li>
+                      <li>• {t('fourThingsTouch')}</li>
+                      <li>• {t('threeThingsHear')}</li>
+                      <li>• {t('twoThingsSmell')}</li>
+                      <li>• {t('oneThingTaste')}</li>
                     </ul>
                   </div>
                 </div>
@@ -229,10 +230,10 @@ export default function InteractivePanicButton() {
                 <div className="mb-6">
                   <div className="space-y-3">
                     {[
-                      "This feeling will pass",
-                      "You are safe right now", 
-                      "You are stronger than you think",
-                      "You have overcome challenges before"
+                      t('affirmation1'),
+                      t('affirmation2'), 
+                      t('affirmation3'),
+                      t('affirmation4')
                     ].map((affirmation, index) => (
                       <motion.div
                         key={index}
@@ -255,13 +256,13 @@ export default function InteractivePanicButton() {
                 <div className="mb-6">
                   <div className="space-y-3">
                     <Button variant="outline" className="w-full">
-                      Call a Trusted Friend
+                      {t('callTrustedFriend')}
                     </Button>
                     <Button variant="outline" className="w-full">
-                      Text Crisis Line: 741741
+                      {t('textCrisisLine')}
                     </Button>
                     <Button variant="outline" className="w-full">
-                      Call Crisis Hotline: 988
+                      {t('callCrisisHotline')}
                     </Button>
                   </div>
                 </div>
@@ -275,16 +276,16 @@ export default function InteractivePanicButton() {
               <div className="flex gap-3 justify-center">
                 <Button onClick={resetExercise} variant="outline" size="sm">
                   <RotateCcw className="w-4 h-4 mr-2" />
-                  Start Over
+                  {t('startOver')}
                 </Button>
                 <Button onClick={nextStep} size="sm" className="bg-teal-600 hover:bg-teal-700">
                   {currentStep === steps.length - 1 ? (
                     <>
                       <CheckCircle className="w-4 h-4 mr-2" />
-                      Complete
+                      {t('complete')}
                     </>
                   ) : (
-                    'Next Step'
+                    t('nextStep')
                   )}
                 </Button>
               </div>
