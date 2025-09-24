@@ -98,6 +98,56 @@ const translations = {
     instantAccessToCalm: 'Instant Access to Calm',
     reframeYourThoughts: 'Reframe Your Thoughts',
     findYourPeace: 'Find Your Peace',
+    
+    // Panic Relief Interactive Component
+    groundYourself: 'Ground Yourself',
+    groundingTechnique: '5-4-3-2-1 Technique',
+    groundingInstruction: 'Name 5 things you can see around you',
+    breatheDeep: 'Breathe Deeply',
+    breathingTechnique: '4-7-8 Breathing',
+    breathingInstruction: 'Follow the breathing pattern to calm your nervous system',
+    positiveAffirmations: 'Positive Affirmations',
+    remindYourself: 'Remind Yourself',
+    affirmationInstruction: 'This feeling will pass. You are safe. You are strong.',
+    seekSupport: 'Seek Support',
+    youreNotAlone: 'You\'re Not Alone',
+    supportInstruction: 'Consider reaching out to someone you trust',
+    
+    // Breathing Instructions
+    breatheInSlowly: 'Breathe in slowly',
+    holdYourBreath: 'Hold your breath',
+    breatheOutSlowly: 'Breathe out slowly',
+    startBreathing: 'Start Breathing',
+    pauseBreathing: 'Pause Breathing',
+    
+    // Grounding Exercise
+    lookAroundIdentify: 'Look around and identify:',
+    fiveThingsSee: '5 things you can see',
+    fourThingsTouch: '4 things you can touch',
+    threeThingsHear: '3 things you can hear',
+    twoThingsSmell: '2 things you can smell',
+    oneThingTaste: '1 thing you can taste',
+    
+    // Affirmations
+    affirmation1: 'This feeling will pass',
+    affirmation2: 'You are safe right now',
+    affirmation3: 'You are stronger than you think',
+    affirmation4: 'You have overcome challenges before',
+    
+    // Support Resources
+    callTrustedFriend: 'Call a Trusted Friend',
+    textCrisisLine: 'Text Crisis Line: 741741',
+    callCrisisHotline: 'Call Crisis Hotline: 988',
+    
+    // Controls
+    startOver: 'Start Over',
+    nextStep: 'Next Step',
+    complete: 'Complete',
+    stepProgress: 'Step {{current}} of {{total}}',
+    
+    // Exit Intent Email Collector
+    waitBeforeYouGo: 'Wait! Before you go...',
+    getEarlyAccessToSakina: 'Get early access to Sakina and join thousands finding peace',
     stayPrivate: 'Stay Private',
     worksOffline: 'Works 100% offline after download',
     groundingTechnique: '5-4-3-2-1 grounding technique',
@@ -302,6 +352,56 @@ const translations = {
     feelPeaceReturning: 'Sentez la paix revenir',
     youAreStrong: 'Vous êtes fort(e)',
     identifyThought: 'Identifier la Pensée',
+    
+    // Panic Relief Interactive Component - French
+    groundYourself: 'Ancrez-vous',
+    groundingTechnique: 'Technique 5-4-3-2-1',
+    groundingInstruction: 'Nommez 5 choses que vous pouvez voir autour de vous',
+    breatheDeep: 'Respirez Profondément',
+    breathingTechnique: 'Respiration 4-7-8',
+    breathingInstruction: 'Suivez le rythme de respiration pour calmer votre système nerveux',
+    positiveAffirmations: 'Affirmations Positives',
+    remindYourself: 'Rappelez-vous',
+    affirmationInstruction: 'Ce sentiment va passer. Vous êtes en sécurité. Vous êtes fort(e).',
+    seekSupport: 'Chercher du Soutien',
+    youreNotAlone: 'Vous N\'êtes Pas Seul(e)',
+    supportInstruction: 'Pensez à contacter quelqu\'un en qui vous avez confiance',
+    
+    // Breathing Instructions - French
+    breatheInSlowly: 'Inspirez lentement',
+    holdYourBreath: 'Retenez votre souffle',
+    breatheOutSlowly: 'Expirez lentement',
+    startBreathing: 'Commencer la Respiration',
+    pauseBreathing: 'Pause Respiration',
+    
+    // Grounding Exercise - French
+    lookAroundIdentify: 'Regardez autour de vous et identifiez :',
+    fiveThingsSee: '5 choses que vous pouvez voir',
+    fourThingsTouch: '4 choses que vous pouvez toucher',
+    threeThingsHear: '3 choses que vous pouvez entendre',
+    twoThingsSmell: '2 choses que vous pouvez sentir',
+    oneThingTaste: '1 chose que vous pouvez goûter',
+    
+    // Affirmations - French
+    affirmation1: 'Ce sentiment va passer',
+    affirmation2: 'Vous êtes en sécurité maintenant',
+    affirmation3: 'Vous êtes plus fort(e) que vous ne le pensez',
+    affirmation4: 'Vous avez surmonté des défis auparavant',
+    
+    // Support Resources - French
+    callTrustedFriend: 'Appeler un Ami de Confiance',
+    textCrisisLine: 'Ligne de Crise par SMS : 3114',
+    callCrisisHotline: 'Ligne d\'Urgence : 3114',
+    
+    // Controls - French
+    startOver: 'Recommencer',
+    nextStep: 'Étape Suivante',
+    complete: 'Terminé',
+    stepProgress: 'Étape {{current}} sur {{total}}',
+    
+    // Exit Intent Email Collector - French
+    waitBeforeYouGo: 'Attendez ! Avant de partir...',
+    getEarlyAccessToSakina: 'Obtenez un accès anticipé à Sakina et rejoignez des milliers de personnes trouvant la paix',
     whatAreYouThinking: 'À quoi pensez-vous ?',
     writeItDown: 'Écrivez-le',
     challengeThought: 'Défier la Pensée',
@@ -556,6 +656,56 @@ const translations = {
     wellKeepYouUpdated: 'سنبقيك على اطلاع بآخر الأخبار',
     earlyAccess: 'وصول مبكر',
     exclusiveContent: 'محتوى حصري',
+    
+    // Panic Relief Interactive Component - Arabic with Islamic Context
+    groundYourself: 'اثبت نفسك',
+    groundingTechnique: 'تقنية 5-4-3-2-1',
+    groundingInstruction: 'اذكر 5 أشياء تراها من حولك من خلق الله',
+    breatheDeep: 'تنفس بعمق',
+    breathingTechnique: 'تنفس 4-7-8',
+    breathingInstruction: 'اتبع نمط التنفس لتهدئة جهازك العصبي واذكر الله',
+    positiveAffirmations: 'التذكير الإيجابي',
+    remindYourself: 'ذكر نفسك',
+    affirmationInstruction: 'هذا الشعور سيزول بإذن الله. أنت في أمان. أنت قوي بالله.',
+    seekSupport: 'اطلب الدعم',
+    youreNotAlone: 'لست وحدك',
+    supportInstruction: 'فكر في التواصل مع شخص تثق به أو اذكر الله',
+    
+    // Breathing Instructions - Arabic
+    breatheInSlowly: 'استنشق ببطء',
+    holdYourBreath: 'احبس أنفاسك',
+    breatheOutSlowly: 'ازفر ببطء',
+    startBreathing: 'ابدأ التنفس',
+    pauseBreathing: 'توقف عن التنفس',
+    
+    // Grounding Exercise - Arabic with Islamic elements
+    lookAroundIdentify: 'انظر حولك واذكر:',
+    fiveThingsSee: '5 أشياء تراها من خلق الله',
+    fourThingsTouch: '4 أشياء يمكنك لمسها',
+    threeThingsHear: '3 أصوات تسمعها',
+    twoThingsSmell: '2 روائح تشمها',
+    oneThingTaste: '1 طعم تتذوقه',
+    
+    // Affirmations - Arabic with Islamic context
+    affirmation1: 'هذا الشعور سيزول بإذن الله',
+    affirmation2: 'أنت في أمان الآن والله معك',
+    affirmation3: 'أنت أقوى مما تعتقد بفضل الله',
+    affirmation4: 'لقد تجاوزت تحديات من قبل بعون الله',
+    
+    // Support Resources - Arabic
+    callTrustedFriend: 'اتصل بصديق تثق به',
+    textCrisisLine: 'خط الأزمات النصي: 920033360',
+    callCrisisHotline: 'خط المساعدة النفسية: 920033360',
+    
+    // Controls - Arabic
+    startOver: 'ابدأ من جديد',
+    nextStep: 'الخطوة التالية',
+    complete: 'مكتمل',
+    stepProgress: 'الخطوة {{current}} من {{total}}',
+    
+    // Exit Intent Email Collector - Arabic
+    waitBeforeYouGo: 'انتظر! قبل أن تغادر...',
+    getEarlyAccessToSakina: 'احصل على وصول مبكر لسكينة وانضم لآلاف الأشخاص الذين وجدوا السلام',
     communityUpdates: 'تحديثات المجتمع',
     mentalWellnessTips: 'نصائح العافية النفسية',
     freeResources: 'موارد مجانية',
